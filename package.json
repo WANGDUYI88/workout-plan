@@ -4,5 +4,8 @@
   "description": "Home Shoulder & Arm Training Plan",
   "scripts": {
     "start": "npx serve ."
+  },
+  "dependencies": {
+    "http-proxy": "^1.18.1"
   }
 }
