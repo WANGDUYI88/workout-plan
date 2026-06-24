@@ -1,0 +1,8 @@
+{
+  "name": "workout-plan",
+  "version": "1.0.0",
+  "description": "Home Shoulder & Arm Training Plan",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
