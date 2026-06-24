@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>居家肩臂训练计划 | 零基础入门</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans SC', 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 30%, #0d9488 70%, #0891b2 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 15% 20%, rgba(45, 212, 191, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 85% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(20, 184, 166, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 16px 48px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+        
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .phase-tab {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .phase-tab.active {
+            background: linear-gradient(135deg, #14b8a6, #0d9488);
+            box-shadow: 0 4px 20px rgba(20, 184, 166, 0.4);
+            color: white;
+        }
+        
+        .exercise-img-container {
+            background: #f8fafc;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        .exercise-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .start-end-label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(15, 23, 42, 0.8);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        .tag {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .progress-bar {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #14b8a6, #06b6d4, #3b82f6);
+            border-radius: 100px;
+            height: 100%;
+            transition: width 1s ease-out;
+        }
+        
+        .muscle-tag {
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        .muscle-shoulder { background: linear-gradient(135deg, #fef3c7, #fde68a); color: #92400e; }
+        .muscle-back { background: linear-gradient(135deg, #d1fae5, #a7f3d0); color: #065f46; }
+        .muscle-chest { background: linear-gradient(135deg, #fee2e2, #fecaca); color: #991b1b; }
+        .muscle-arm { background: linear-gradient(135deg, #dbeafe, #bfdbfe); color: #1e40af; }
+        .muscle-posture { background: linear-gradient(135deg, #e0e7ff, #c7d2fe); color: #3730a3; }
+        .muscle-core { background: linear-gradient(135deg, #f3e8ff, #e9d5ff); color: #6b21a8; }
+        
+        .spec-card {
+            border-left: 4px solid #14b8a6;
+            background: #f0fdfa;
+        }
+        
+        .buy-tip {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border-left: 4px solid #f59e0b;
+        }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: rgba(20, 184, 166, 0.6); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(20, 184, 166, 0.8); }
+        
+        .content-wrapper { position: relative; z-index: 1; }
+        
+        .section-title {
+            color: white;
+            font-weight: 700;
+        }
+        
+        .step-num {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #14b8a6, #0d9488);
+            color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-right: 10px;
+        }
+        
+        .accent-teal { color: #14b8a6; }
+        .accent-blue { color: #3b82f6; }
+        .accent-orange { color: #f97316; }
+    </style>
+</head>
+<body class="text-gray-800">
+    <div class="content-wrapper">
+        <!-- Header -->
+        <header class="pt-12 pb-8 px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="floating inline-block mb-4">
+                    <div class="w-20 h-20 rounded-3xl glass flex items-center justify-center text-4xl mx-auto">
+                        💪
+                    </div>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-3 drop-shadow-lg tracking-tight">
+                    居家肩臂训练计划
+                </h1>
+                <p class="text-xl text-white/85 font-medium drop-shadow">
+                    零基础入门 · 三阶段渐进 · 增肌与体态同步改善
+                </p>
+                <div class="flex flex-wrap justify-center gap-3 mt-6">
+                    <span class="tag px-4 py-2 rounded-full text-white font-medium text-sm">🏠 居家训练</span>
+                    <span class="tag px-4 py-2 rounded-full text-white font-medium text-sm">⏱️ 每次30分钟</span>
+                    <span class="tag px-4 py-2 rounded-full text-white font-medium text-sm">📅 每周3天</span>
+                    <span class="tag px-4 py-2 rounded-full text-white font-medium text-sm">🎯 宽肩·紧臂·好体态</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-5xl mx-auto px-4 pb-20">
+            <!-- Equipment Link -->
+            <section class="mb-10 fade-in" style="animation-delay: 0.1s">
+                <div class="glass rounded-3xl p-6 md:p-8">
+                    <h2 class="text-2xl font-bold mb-2 flex items-center gap-3 section-title">
+                        <span class="text-3xl">🛒</span>
+                        器材准备
+                    </h2>
+                    <p class="text-white/70 mb-4 text-sm">详细的器材选购指南和购买链接已单独整理</p>
+                    <a href="equipment.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all">
+                        <span>📖</span> 查看器材选购指南
+                    </a>
+                </div>
+            </section>
+
+            <!-- Training Structure -->
+            <section class="mb-10 fade-in" style="animation-delay: 0.2s">
+                <div class="glass rounded-3xl p-6 md:p-8">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 section-title">
+                        <span class="text-3xl">📋</span>
+                        每次训练结构（30分钟）
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 glass-card rounded-2xl p-4">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white font-bold text-xl shadow-lg flex-shrink-0">
+                                5'
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">热身激活</h3>
+                                <p class="text-gray-600 text-sm">手臂绕环前后各15次、肩部环绕、弹力带拉开15次、颈部缓慢活动，提升体温预防受伤</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 glass-card rounded-2xl p-4">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-600 flex items-center justify-center text-white font-bold text-xl shadow-lg flex-shrink-0">
+                                20'
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">正式训练</h3>
+                                <p class="text-gray-600 text-sm">按下方计划做4个动作，每个动作3组，组间休息60-90秒，专注动作质量</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 glass-card rounded-2xl p-4">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-xl shadow-lg flex-shrink-0">
+                                5'
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">拉伸放松</h3>
+                                <p class="text-gray-600 text-sm">胸肌门框拉伸、肩部拉伸、颈部拉伸、婴儿式放松，每个部位保持30秒</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Phase Tabs -->
+            <section class="mb-10 fade-in" style="animation-delay: 0.3s">
+                <div class="glass rounded-3xl p-6 md:p-8">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 section-title">
+                        <span class="text-3xl">📈</span>
+                        三阶段渐进计划
+                    </h2>
+                    
+                    <div class="flex gap-2 mb-6 p-1 glass-dark rounded-2xl">
+                        <button onclick="switchPhase(1)" id="phase1-tab" class="phase-tab active flex-1 py-3 px-4 rounded-xl font-semibold text-center">
+                            🌱 适应期<br><span class="text-xs font-normal opacity-90">第1-4周</span>
+                        </button>
+                        <button onclick="switchPhase(2)" id="phase2-tab" class="phase-tab flex-1 py-3 px-4 rounded-xl font-semibold text-white/70 text-center">
+                            🌿 进阶期<br><span class="text-xs font-normal opacity-90">第5-8周</span>
+                        </button>
+                        <button onclick="switchPhase(3)" id="phase3-tab" class="phase-tab flex-1 py-3 px-4 rounded-xl font-semibold text-white/70 text-center">
+                            🌳 巩固期<br><span class="text-xs font-normal opacity-90">第9周+</span>
+                        </button>
+                    </div>
+
+                    <!-- ========== PHASE 1 ========== -->
+                    <div id="phase1" class="phase-content">
+                        <div class="mb-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-semibold text-white">目标：建立正确动作模式，唤醒肌肉，改善体态</span>
+                                <span class="text-white/80 text-sm">难度：⭐</span>
+                            </div>
+                            <div class="progress-bar h-2">
+                                <div class="progress-fill" style="width: 33%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Exercise 1: 墙壁俯卧撑 -->
+                        <div class="glass-card rounded-3xl p-6 mb-6">
+                            <div class="flex flex-wrap items-center gap-2 mb-4">
+                                <h3 class="text-xl font-bold">动作一：墙壁俯卧撑</h3>
+                                <span class="muscle-tag muscle-chest">胸部</span>
+                                <span class="muscle-tag muscle-shoulder">肩前侧</span>
+                                <span class="muscle-tag muscle-arm">手臂后侧</span>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-1 gap-4 mb-5">
+                                <div class="exercise-img-container relative aspect-[4/3] max-w-lg mx-auto">
+                                    <span class="start-end-label">标准姿势</span>
+                                    <img src="assets/wall-pushup-start.jpg" alt="墙壁俯卧撑">
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-2xl p-5 mb-4">
+                                <p class="font-bold mb-3 text-gray-800">📝 分步讲解：</p>
+                                <div class="space-y-2 text-sm text-gray-700">
+                                    <div class="flex items-start">
+                                        <span class="step-num">1</span>
+                                        <span>面向墙壁站立，距离墙约一大步（50-60cm），双脚与肩同宽</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">2</span>
+                                        <span>双手撑在墙上，位置比肩膀略宽一点，手指向上</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">3</span>
+                                        <span><strong>关键：</strong>从脑袋到脚后跟保持一条直线，就像一块木板，核心收紧肚子不要放松</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">4</span>
+                                        <span>吸气，慢慢弯曲手肘，让胸部向墙壁靠近，直到额头几乎碰到墙</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">5</span>
+                                        <span>呼气，双手用力推墙，把身体推回到起始位置，手肘不要完全锁死</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-3 text-sm mb-4">
+                                <div class="bg-emerald-50 p-4 rounded-xl border-l-4 border-emerald-500">
+                                    <p class="font-bold text-emerald-800 mb-1">✅ 正确姿势：</p>
+                                    <p class="text-emerald-700">身体从头到脚一条线；手肘约45度打开；动作缓慢有控制；推起时呼气</p>
+                                </div>
+                                <div class="bg-red-50 p-4 rounded-xl border-l-4 border-red-500">
+                                    <p class="font-bold text-red-800 mb-1">❌ 常见错误：</p>
+                                    <p class="text-red-700">塌腰撅屁股；只动脑袋身体不动；手肘张太开成90度；动作太快</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-3 text-sm">
+                                <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-xl font-semibold">3组</span>
+                                <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-xl font-semibold">10-12次/组</span>
+                                <span class="bg-gray-100 text-gray-600 px-4 py-2 rounded-xl">组间休息60秒</span>
+                            </div>
+                        </div>
+
+                        <!-- Exercise 2: 弹力带侧平举 -->
+                        <div class="glass-card rounded-3xl p-6 mb-6">
+                            <div class="flex flex-wrap items-center gap-2 mb-4">
+                                <h3 class="text-xl font-bold">动作二：弹力带侧平举</h3>
+                                <span class="muscle-tag muscle-shoulder">肩中束（宽肩关键！）</span>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-4 mb-5">
+                                <div class="exercise-img-container relative aspect-[4/3]">
+                                    <span class="start-end-label">起始位置</span>
+                                    <img src="assets/lateral-raise-start.jpg" alt="弹力带侧平举起始">
+                                </div>
+                                <div class="exercise-img-container relative aspect-[4/3]">
+                                    <span class="start-end-label">抬起位置</span>
+                                    <img src="assets/lateral-raise-end.jpg" alt="弹力带侧平举结束">
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-2xl p-5 mb-4">
+                                <p class="font-bold mb-3 text-gray-800">📝 分步讲解：</p>
+                                <div class="space-y-2 text-sm text-gray-700">
+                                    <div class="flex items-start">
+                                        <span class="step-num">1</span>
+                                        <span>双脚踩住弹力带中间，与肩同宽，双手握住弹力带两端把手</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">2</span>
+                                        <span>站直，核心收紧，肩膀<strong>下沉</strong>（不要耸肩！想象肩膀往口袋方向沉）</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">3</span>
+                                        <span>手肘保持一点点弯曲（不要完全伸直锁死，也不要弯太多）</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">4</span>
+                                        <span>呼气，双手从身体两侧慢慢抬起，就像鸟张开翅膀一样</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">5</span>
+                                        <span>抬到<strong>手臂与地面平行</strong>（与肩膀同高），从正面看你像一个"大"字，停1秒</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">6</span>
+                                        <span>吸气，慢慢放下手臂回到起始位置，要慢！不要让弹力带弹回去</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-3 text-sm mb-4">
+                                <div class="bg-emerald-50 p-4 rounded-xl border-l-4 border-emerald-500">
+                                    <p class="font-bold text-emerald-800 mb-1">✅ 正确姿势：</p>
+                                    <p class="text-emerald-700">肩膀下沉不耸肩；手肘微屈；抬到肩高即可；慢举慢放</p>
+                                </div>
+                                <div class="bg-red-50 p-4 rounded-xl border-l-4 border-red-500">
+                                    <p class="font-bold text-red-800 mb-1">❌ 常见错误：</p>
+                                    <p class="text-red-700">耸肩（肩膀碰到耳朵）；抬太高超过肩膀；身体晃动借力；放下太快</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-3 text-sm">
+                                <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-xl font-semibold">3组</span>
+                                <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-xl font-semibold">12-15次/组</span>
+                                <span class="bg-gray-100 text-gray-600 px-4 py-2 rounded-xl">组间休息60秒</span>
+                                <span class="bg-amber-100 text-amber-700 px-4 py-2 rounded-xl font-medium">阻力：15-20磅</span>
+                            </div>
+                        </div>
+
+                        <!-- Exercise 3: 弹力带面拉 -->
+                        <div class="glass-card rounded-3xl p-6 mb-6">
+                            <div class="flex flex-wrap items-center gap-2 mb-4">
+                                <h3 class="text-xl font-bold">动作三：弹力带面拉</h3>
+                                <span class="muscle-tag muscle-back">肩后束</span>
+                                <span class="muscle-tag muscle-posture">改善圆肩神器！</span>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-4 mb-5">
+                                <div class="exercise-img-container relative aspect-[4/3]">
+                                    <span class="start-end-label">起始位置</span>
+                                    <img src="assets/face-pull-start.jpg" alt="弹力带面拉起始">
+                                </div>
+                                <div class="exercise-img-container relative aspect-[4/3]">
+                                    <span class="start-end-label">拉到位置</span>
+                                    <img src="assets/face-pull-end.jpg" alt="弹力带面拉结束">
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-2xl p-5 mb-4">
+                                <p class="font-bold mb-3 text-gray-800">📝 分步讲解：</p>
+                                <div class="space-y-2 text-sm text-gray-700">
+                                    <div class="flex items-start">
+                                        <span class="step-num">1</span>
+                                        <span>把弹力带中间固定在门把手上，或者关门夹住，高度大约和你的脸一样高</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">2</span>
+                                        <span>面对固定点站立，双手握住弹力带两端，后退几步让弹力带稍微有张力</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">3</span>
+                                        <span>手臂伸直向前，手肘不要锁死，这是起始位置</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">4</span>
+                                        <span>呼气，双手向<strong>额头两侧</strong>拉，就像要把弹力带拉开套在头上一样</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">5</span>
+                                        <span><strong>最关键：</strong>手肘要抬高，比肩膀还高一点，向外打开</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">6</span>
+                                        <span>拉到最后时，想象你要用两个肩胛骨夹住一支笔，停1-2秒</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">7</span>
+                                        <span>吸气，慢慢控制着回到起始位置，不要让弹力带把你拽回去</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-3 text-sm mb-4">
+                                <div class="bg-emerald-50 p-4 rounded-xl border-l-4 border-emerald-500">
+                                    <p class="font-bold text-emerald-800 mb-1">✅ 正确姿势：</p>
+                                    <p class="text-emerald-700">手肘抬高外展；拉到额头两侧；肩胛骨向后夹紧；身体直立不后仰</p>
+                                </div>
+                                <div class="bg-red-50 p-4 rounded-xl border-l-4 border-red-500">
+                                    <p class="font-bold text-red-800 mb-1">❌ 常见错误：</p>
+                                    <p class="text-red-700">手肘往下掉；只拉到胸口；身体后仰借力；耸肩</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-3 text-sm">
+                                <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-xl font-semibold">3组</span>
+                                <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-xl font-semibold">15次/组</span>
+                                <span class="bg-gray-100 text-gray-600 px-4 py-2 rounded-xl">组间休息60秒</span>
+                            </div>
+                        </div>
+
+                        <!-- Exercise 4: 椅子臂屈伸 -->
+                        <div class="glass-card rounded-3xl p-6">
+                            <div class="flex flex-wrap items-center gap-2 mb-4">
+                                <h3 class="text-xl font-bold">动作四：椅子臂屈伸</h3>
+                                <span class="muscle-tag muscle-arm">手臂后侧（告别拜拜肉）</span>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-4 mb-5">
+                                <div class="exercise-img-container relative aspect-[4/3]">
+                                    <span class="start-end-label">起始位置</span>
+                                    <img src="assets/tricep-dip-start.jpg" alt="椅子臂屈伸起始">
+                                </div>
+                                <div class="exercise-img-container relative aspect-[4/3]">
+                                    <span class="start-end-label">下降位置</span>
+                                    <img src="assets/tricep-dip-end.jpg" alt="椅子臂屈伸结束">
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-2xl p-5 mb-4">
+                                <p class="font-bold mb-3 text-gray-800">📝 分步讲解：</p>
+                                <div class="space-y-2 text-sm text-gray-700">
+                                    <div class="flex items-start">
+                                        <span class="step-num">1</span>
+                                        <span>找一张<strong>稳固的椅子</strong>（不要用带轮子的转椅！），双手撑在椅子边缘，手指向前</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">2</span>
+                                        <span>臀部向前移动，离开椅子，身体重量由双手支撑</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">3</span>
+                                        <span>初期<strong>膝盖弯曲90度</strong>，脚平放在地上（这样比较简单，进阶再伸直腿）</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">4</span>
+                                        <span>肩膀下沉，不要耸肩，手肘指向<strong>正后方</strong>（不是向两侧张开！）</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">5</span>
+                                        <span>吸气，慢慢弯曲手肘，让臀部向地面方向下降，直到大臂与地面平行</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">6</span>
+                                        <span>下降时上半身稍微靠近椅子，不要离太远</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">7</span>
+                                        <span>呼气，双手用力撑椅子，把身体推回到起始位置</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-3 text-sm mb-4">
+                                <div class="bg-emerald-50 p-4 rounded-xl border-l-4 border-emerald-500">
+                                    <p class="font-bold text-emerald-800 mb-1">✅ 正确姿势：</p>
+                                    <p class="text-emerald-700">手肘指向后方；身体靠近椅子；肩膀下沉；动作缓慢</p>
+                                </div>
+                                <div class="bg-red-50 p-4 rounded-xl border-l-4 border-red-500">
+                                    <p class="font-bold text-red-800 mb-1">❌ 常见错误：</p>
+                                    <p class="text-red-700">手肘向外张开；身体离椅子太远；下降太低伤肩膀；耸肩</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-3 text-sm">
+                                <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-xl font-semibold">3组</span>
+                                <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-xl font-semibold">8-10次/组</span>
+                                <span class="bg-gray-100 text-gray-600 px-4 py-2 rounded-xl">组间休息60秒</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ========== PHASE 2 ========== -->
+                    <div id="phase2" class="phase-content hidden">
+                        <div class="mb-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-semibold text-white">目标：增加训练负荷，强化肩臂线条，进一步改善体态</span>
+                                <span class="text-white/80 text-sm">难度：⭐⭐</span>
+                            </div>
+                            <div class="progress-bar h-2">
+                                <div class="progress-fill" style="width: 66%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-dark rounded-2xl p-4 mb-6">
+                            <p class="text-white/90 text-sm">适应期动作能标准完成所有次数、感觉轻松后，进入进阶期，把动作替换/升级为：</p>
+                        </div>
+
+                        <!-- Exercise 1: 跪姿俯卧撑 -->
+                        <div class="glass-card rounded-3xl p-6 mb-6">
+                            <div class="flex flex-wrap items-center gap-2 mb-4">
+                                <h3 class="text-xl font-bold">进阶一：跪姿俯卧撑</h3>
+                                <span class="muscle-tag muscle-chest">胸部</span>
+                                <span class="muscle-tag muscle-shoulder">肩膀</span>
+                                <span class="muscle-tag muscle-arm">手臂</span>
+                            </div>
+                            
+                            <div class="exercise-img-container relative aspect-[4/3] mb-5">
+                                <img src="assets/kneeling-pushup.jpg" alt="跪姿俯卧撑">
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-2xl p-5 mb-4">
+                                <p class="font-bold mb-3 text-gray-800">📝 动作要点：</p>
+                                <div class="space-y-2 text-sm text-gray-700">
+                                    <div class="flex items-start">
+                                        <span class="step-num">1</span>
+                                        <span>膝盖跪在瑜伽垫上，小腿抬起交叉（或脚背贴地）</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">2</span>
+                                        <span>双手撑在地面，位置比肩膀略宽一点</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">3</span>
+                                        <span><strong>从脑袋到膝盖保持一条直线</strong>，核心收紧，不要塌腰也不要撅屁股</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">4</span>
+                                        <span>吸气，弯曲手肘，让胸部慢慢向地面靠近，直到胸部离地面约5cm</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">5</span>
+                                        <span>手肘向身体两侧约45度方向打开，不要张成90度</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">6</span>
+                                        <span>呼气，双手用力推地，把身体推回到起始位置</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-3 text-sm">
+                                <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-xl font-semibold">3组</span>
+                                <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-xl font-semibold">10-12次/组</span>
+                                <span class="bg-gray-100 text-gray-600 px-4 py-2 rounded-xl">组间休息90秒</span>
+                            </div>
+                        </div>
+
+                        <!-- Exercise 2: 哑铃肩推 -->
+                        <div class="glass-card rounded-3xl p-6 mb-6">
+                            <div class="flex flex-wrap items-center gap-2 mb-4">
+                                <h3 class="text-xl font-bold">进阶二：哑铃坐姿肩推</h3>
+                                <span class="muscle-tag muscle-shoulder">肩膀整体</span>
+                            </div>
+                            
+                            <div class="exercise-img-container relative aspect-[4/3] mb-5">
+                                <img src="assets/shoulder-press.jpg" alt="哑铃坐姿肩推">
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-2xl p-5 mb-4">
+                                <p class="font-bold mb-3 text-gray-800">📝 分步讲解：</p>
+                                <div class="space-y-2 text-sm text-gray-700">
+                                    <div class="flex items-start">
+                                        <span class="step-num">1</span>
+                                        <span>坐在有靠背的椅子上，背部贴紧靠背，核心收紧，双脚平踩地面</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">2</span>
+                                        <span>双手各握一个哑铃，举到<strong>耳朵两侧</strong>，大臂约与地面平行，手肘向前</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">3</span>
+                                        <span>掌心向前，这是起始位置</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">4</span>
+                                        <span>呼气，双手垂直向上推起哑铃，直到手臂差不多伸直</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">5</span>
+                                        <span>注意手肘<strong>不要完全锁死</strong>，保持一点点弯曲保护关节</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">6</span>
+                                        <span>两个哑铃在最高点不要互相碰撞</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">7</span>
+                                        <span>吸气，慢慢把哑铃放回到耳朵两侧的起始位置</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-3 text-sm">
+                                <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-xl font-semibold">3组</span>
+                                <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-xl font-semibold">10-12次/组</span>
+                                <span class="bg-gray-100 text-gray-600 px-4 py-2 rounded-xl">组间休息90秒</span>
+                                <span class="bg-amber-100 text-amber-700 px-4 py-2 rounded-xl font-medium">起始重量：2-3kg/只</span>
+                            </div>
+                        </div>
+
+                        <!-- Exercise 3: 单臂哑铃划船 -->
+                        <div class="glass-card rounded-3xl p-6 mb-6">
+                            <div class="flex flex-wrap items-center gap-2 mb-4">
+                                <h3 class="text-xl font-bold">进阶三：单臂哑铃划船</h3>
+                                <span class="muscle-tag muscle-back">背部</span>
+                                <span class="muscle-tag muscle-posture">改善体态</span>
+                            </div>
+                            
+                            <div class="exercise-img-container relative aspect-[4/3] mb-5">
+                                <img src="assets/bent-row.jpg" alt="单臂哑铃划船">
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-2xl p-5 mb-4">
+                                <p class="font-bold mb-3 text-gray-800">📝 分步讲解：</p>
+                                <div class="space-y-2 text-sm text-gray-700">
+                                    <div class="flex items-start">
+                                        <span class="step-num">1</span>
+                                        <span>左手和左膝盖跪在稳固的椅子/长凳上，右脚踩在地面</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">2</span>
+                                        <span>右手握住哑铃，<strong>背部放平</strong>（想象背上放了一杯水不能洒）</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">3</span>
+                                        <span>右手自然下垂，这是起始位置</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">4</span>
+                                        <span>呼气，用背部的力量把哑铃向上拉，手肘贴紧身体向上</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">5</span>
+                                        <span>拉到哑铃接近你的髋部/腰侧，在最高点停1秒，感觉肩胛骨向内收</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">6</span>
+                                        <span>关键：想象是用手肘往后往上带，而不是用手把哑铃弯起来</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">7</span>
+                                        <span>吸气，慢慢把哑铃放回起始位置，做完一侧换另一侧</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-3 text-sm">
+                                <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-xl font-semibold">3组</span>
+                                <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-xl font-semibold">每侧12次/组</span>
+                                <span class="bg-gray-100 text-gray-600 px-4 py-2 rounded-xl">组间休息90秒</span>
+                                <span class="bg-amber-100 text-amber-700 px-4 py-2 rounded-xl font-medium">起始重量：2-3kg/只</span>
+                            </div>
+                        </div>
+
+                        <!-- Exercise 4: 哑铃弯举 -->
+                        <div class="glass-card rounded-3xl p-6">
+                            <div class="flex flex-wrap items-center gap-2 mb-4">
+                                <h3 class="text-xl font-bold">进阶四：哑铃弯举</h3>
+                                <span class="muscle-tag muscle-arm">手臂前侧</span>
+                            </div>
+                            
+                            <div class="exercise-img-container relative aspect-[4/3] mb-5">
+                                <img src="assets/bicep-curl.jpg" alt="哑铃弯举">
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-2xl p-5 mb-4">
+                                <p class="font-bold mb-3 text-gray-800">📝 分步讲解：</p>
+                                <div class="space-y-2 text-sm text-gray-700">
+                                    <div class="flex items-start">
+                                        <span class="step-num">1</span>
+                                        <span>站直，双手各握一个哑铃，大臂贴紧身体两侧，掌心向前</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">2</span>
+                                        <span>核心收紧，肩膀下沉，不要晃动身体</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">3</span>
+                                        <span>呼气，保持大臂不动，弯曲手肘把哑铃举向肩膀</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">4</span>
+                                        <span>举到最高点时停一下，感受二头肌收缩</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">5</span>
+                                        <span>吸气，慢慢放下哑铃回到起始位置（慢放比举更重要！）</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <span class="step-num">6</span>
+                                        <span>关键：只有小臂动，大臂全程贴紧身体不要前后晃</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-3 text-sm">
+                                <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-xl font-semibold">3组</span>
+                                <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-xl font-semibold">12-15次/组</span>
+                                <span class="bg-gray-100 text-gray-600 px-4 py-2 rounded-xl">组间休息60秒</span>
+                                <span class="bg-amber-100 text-amber-700 px-4 py-2 rounded-xl font-medium">起始重量：1-2kg/只</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ========== PHASE 3 ========== -->
+                    <div id="phase3" class="phase-content hidden">
+                        <div class="mb-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-semibold text-white">目标：雕刻线条，增加训练容量，养成长期运动习惯</span>
+                                <span class="text-white/80 text-sm">难度：⭐⭐⭐</span>
+                            </div>
+                            <div class="progress-bar h-2">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-card rounded-2xl p-6 mb-6">
+                            <p class="text-center text-gray-700 mb-4 text-lg">
+                                🎉 恭喜你进入巩固期！这时你已经有了基础力量，训练内容升级为A/B分化训练，每周各练一次，第三次自由选择。
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-4 text-gray-700 mb-6">
+                                <div class="bg-teal-50 rounded-xl p-4">
+                                    <p class="font-bold text-teal-900 mb-2">📈 俯卧撑进阶路线：</p>
+                                    <p class="text-sm">墙壁俯卧撑 → 跪姿俯卧撑 → 上斜俯卧撑（脚搭椅子）→ 标准俯卧撑</p>
+                                </div>
+                                <div class="bg-blue-50 rounded-xl p-4">
+                                    <p class="font-bold text-blue-900 mb-2">🏋️ 重量递增：</p>
+                                    <p class="text-sm">每2周尝试增加0.5-1kg重量，或者每组多做2次，循序渐进不要急</p>
+                                </div>
+                                <div class="bg-orange-50 rounded-xl p-4">
+                                    <p class="font-bold text-orange-900 mb-2">⚡ 超级组技巧：</p>
+                                    <p class="text-sm">两个动作背靠背做不休息，比如：侧平举15次立刻接肩推12次，提高训练效率</p>
+                                </div>
+                                <div class="bg-purple-50 rounded-xl p-4">
+                                    <p class="font-bold text-purple-900 mb-2">🎯 训练分化：</p>
+                                    <p class="text-sm">A日推力（俯卧撑、肩推、臂屈伸）；B日拉力（划船、面拉、弯举）</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- A日：推力训练 -->
+                        <div class="glass-card rounded-3xl p-6 mb-6">
+                            <div class="flex items-center gap-3 mb-5">
+                                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-600 flex items-center justify-center text-white font-bold text-sm">A</div>
+                                <div>
+                                    <h3 class="text-lg font-bold">推力训练日（周一）</h3>
+                                    <p class="text-xs text-gray-500">胸 · 肩前中束 · 三头肌</p>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-semibold text-gray-800">1. 俯卧撑（按你的能力选择）</span>
+                                        <span class="text-sm text-teal-700 font-semibold">4组 × 10-15次</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">跪姿俯卧撑 / 上斜俯卧撑 / 标准俯卧撑，选一个能标准做10次的版本</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-semibold text-gray-800">2. 哑铃肩推</span>
+                                        <span class="text-sm text-teal-700 font-semibold">4组 × 10-12次</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">坐姿，哑铃从耳朵两侧推到头顶上方，重量比进阶期加0.5-1kg</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-semibold text-gray-800">3. 弹力带侧平举</span>
+                                        <span class="text-sm text-teal-700 font-semibold">3组 × 12-15次</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">肩膀下沉，侧平举到与肩同高，最后一组做递减组（做不动了换轻的弹力带继续做8次）</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-semibold text-gray-800">4. 椅子臂屈伸</span>
+                                        <span class="text-sm text-teal-700 font-semibold">3组 × 12-15次</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">尝试把脚伸直（不弯曲膝盖），增加难度</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-semibold text-gray-800">5. 超级组：肩推 + 侧平举</span>
+                                        <span class="text-sm text-teal-700 font-semibold">2组</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">肩推10次 → 不休息立刻侧平举12次 → 休息90秒，算一组</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- B日：拉力训练 -->
+                        <div class="glass-card rounded-3xl p-6 mb-6">
+                            <div class="flex items-center gap-3 mb-5">
+                                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm">B</div>
+                                <div>
+                                    <h3 class="text-lg font-bold">拉力训练日（周三）</h3>
+                                    <p class="text-xs text-gray-500">背 · 肩后束 · 二头肌</p>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-semibold text-gray-800">1. 单臂哑铃划船</span>
+                                        <span class="text-sm text-teal-700 font-semibold">4组 × 每侧12次</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">背部放平，手肘贴紧身体，重量比进阶期加0.5-1kg</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-semibold text-gray-800">2. 弹力带面拉</span>
+                                        <span class="text-sm text-teal-700 font-semibold">4组 × 15次</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">手肘抬高外展，拉到额头两侧，肩胛骨夹紧，在最高点停2秒</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-semibold text-gray-800">3. 哑铃弯举</span>
+                                        <span class="text-sm text-teal-700 font-semibold">3组 × 12-15次</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">大臂贴紧身体，慢放3秒，最后一组做递减组</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-semibold text-gray-800">4. 弹力带反向飞鸟（新增）</span>
+                                        <span class="text-sm text-teal-700 font-semibold">3组 × 12-15次</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">弹力带固定在身前，双手握住两端，手臂伸直向两侧打开，感受肩后束发力。这个动作对改善圆肩效果非常好</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-semibold text-gray-800">5. 超级组：划船 + 面拉</span>
+                                        <span class="text-sm text-teal-700 font-semibold">2组</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">划船每侧10次 → 不休息立刻面拉12次 → 休息90秒，算一组</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- C日：综合训练 -->
+                        <div class="glass-card rounded-3xl p-6">
+                            <div class="flex items-center gap-3 mb-5">
+                                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white font-bold text-sm">C</div>
+                                <div>
+                                    <h3 class="text-lg font-bold">综合训练日（周五）</h3>
+                                    <p class="text-xs text-gray-500">全身肩臂 · 自由选择重点</p>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-semibold text-gray-800">1. 俯卧撑</span>
+                                        <span class="text-sm text-teal-700 font-semibold">3组 × 10-12次</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">选你觉得有挑战但能完成的版本</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-semibold text-gray-800">2. 哑铃肩推</span>
+                                        <span class="text-sm text-teal-700 font-semibold">3组 × 10-12次</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">同A日</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-semibold text-gray-800">3. 单臂哑铃划船</span>
+                                        <span class="text-sm text-teal-700 font-semibold">3组 × 每侧12次</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">同B日</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-semibold text-gray-800">4. 弹力带面拉</span>
+                                        <span class="text-sm text-teal-700 font-semibold">3组 × 15次</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">同B日</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-semibold text-gray-800">5. 椅子臂屈伸 + 弯举（各做）</span>
+                                        <span class="text-sm text-teal-700 font-semibold">各3组</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">臂屈伸12次 + 弯举12次，交替做，组间休息60秒</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Posture Section -->
+            <section class="mb-10 fade-in" style="animation-delay: 0.4s">
+                <div class="glass rounded-3xl p-6 md:p-8">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 section-title">
+                        <span class="text-3xl">✨</span>
+                        针对性体态改善（每天都可以做！）
+                    </h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <div class="glass-card rounded-2xl p-5">
+                            <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                                <span>🎯</span> 圆肩改善
+                            </h3>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-500 mt-0.5 font-bold">✓</span>
+                                    <span>多做<strong>面拉</strong>、<strong>划船</strong>类动作，强化后背和肩后束</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-500 mt-0.5 font-bold">✓</span>
+                                    <span><strong>胸肌门框拉伸：</strong>站在门框边，手臂弯曲90度贴门框，身体慢慢向前转，感受胸口和肩膀前侧拉伸，保持30秒×3组</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-500 mt-0.5 font-bold">✓</span>
+                                    <span>日常提醒：坐姿时肩膀向后向下沉，不要含胸，电脑屏幕垫高至眼睛高度</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="glass-card rounded-2xl p-5">
+                            <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                                <span>🎯</span> 头前伸改善
+                            </h3>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-500 mt-0.5 font-bold">✓</span>
+                                    <span><strong>靠墙收下巴：</strong>后脑勺、肩膀、臀部贴墙，下巴水平向后收（像做双下巴），感受脖子后侧发力，保持1分钟×3组</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-500 mt-0.5 font-bold">✓</span>
+                                    <span>颈部拉伸：头向一侧侧屈，手轻轻拉头辅助，每侧保持20秒；慢慢左右转头到最大角度</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-500 mt-0.5 font-bold">✓</span>
+                                    <span>看手机时把手机举高到眼睛高度，不要低头；用电脑时屏幕上缘与眼睛平齐</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="glass-card rounded-2xl p-5">
+                            <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                                <span>🎯</span> 锁骨清晰/肩颈线条
+                            </h3>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-500 mt-0.5 font-bold">✓</span>
+                                    <span>肩中束训练（侧平举）让肩膀变宽变圆润，锁骨自然更明显更好看</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-500 mt-0.5 font-bold">✓</span>
+                                    <span>斜方肌放松：耸肩到最高位置然后用力沉肩向下，15次；经常按摩颈部两侧紧张的肌肉</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-500 mt-0.5 font-bold">✓</span>
+                                    <span>配合饮食控制和偶尔有氧（快走、慢跑、跳绳）减脂，线条会更清晰</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="glass-card rounded-2xl p-5">
+                            <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                                <span>🎯</span> 手臂紧致
+                            </h3>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-500 mt-0.5 font-bold">✓</span>
+                                    <span><strong>三头肌训练</strong>（椅子臂屈伸）是告别拜拜肉的关键！女生手臂后侧最容易松弛</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-500 mt-0.5 font-bold">✓</span>
+                                    <span>二头肌训练让手臂前侧有紧致线条，不会松松垮垮</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-500 mt-0.5 font-bold">✓</span>
+                                    <span>不要怕长肌肉！女生睾酮水平低，力量训练只会紧致有线条，不会练成夸张肌肉块</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Weekly Schedule -->
+            <section class="mb-10 fade-in" style="animation-delay: 0.5s">
+                <div class="glass rounded-3xl p-6 md:p-8">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 section-title">
+                        <span class="text-3xl">📅</span>
+                        每周安排建议
+                    </h2>
+                    
+                    <div class="grid grid-cols-7 gap-2 md:gap-3">
+                        <div class="glass-card rounded-2xl p-3 text-center">
+                            <div class="text-xs text-gray-500 mb-1">周一</div>
+                            <div class="text-2xl mb-1">💪</div>
+                            <div class="text-xs font-semibold text-gray-700">训练日</div>
+                        </div>
+                        <div class="glass-dark rounded-2xl p-3 text-center">
+                            <div class="text-xs text-white/60 mb-1">周二</div>
+                            <div class="text-2xl mb-1">🧘</div>
+                            <div class="text-xs text-white/80">休息/拉伸</div>
+                        </div>
+                        <div class="glass-card rounded-2xl p-3 text-center">
+                            <div class="text-xs text-gray-500 mb-1">周三</div>
+                            <div class="text-2xl mb-1">💪</div>
+                            <div class="text-xs font-semibold text-gray-700">训练日</div>
+                        </div>
+                        <div class="glass-dark rounded-2xl p-3 text-center">
+                            <div class="text-xs text-white/60 mb-1">周四</div>
+                            <div class="text-2xl mb-1">🚶</div>
+                            <div class="text-xs text-white/80">休息/散步</div>
+                        </div>
+                        <div class="glass-card rounded-2xl p-3 text-center">
+                            <div class="text-xs text-gray-500 mb-1">周五</div>
+                            <div class="text-2xl mb-1">💪</div>
+                            <div class="text-xs font-semibold text-gray-700">训练日</div>
+                        </div>
+                        <div class="glass-dark rounded-2xl p-3 text-center">
+                            <div class="text-xs text-white/60 mb-1">周六</div>
+                            <div class="text-2xl mb-1">🚶</div>
+                            <div class="text-xs text-white/80">有氧可选</div>
+                        </div>
+                        <div class="glass-dark rounded-2xl p-3 text-center">
+                            <div class="text-xs text-white/60 mb-1">周日</div>
+                            <div class="text-2xl mb-1">😴</div>
+                            <div class="text-xs text-white/80">完全休息</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tips Section -->
+            <section class="fade-in" style="animation-delay: 0.6s">
+                <div class="glass rounded-3xl p-6 md:p-8">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 section-title">
+                        <span class="text-3xl">💡</span>
+                        给零基础训练者的重要建议
+                    </h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="glass-card rounded-2xl p-5">
+                            <h3 class="font-bold mb-2">🔥 关于重量</h3>
+                            <p class="text-sm text-gray-700">选择能做完规定次数但最后2-3次感觉吃力的重量。太轻没效果，太重容易受伤变形。从轻重量开始，动作标准比重量重要。</p>
+                        </div>
+                        <div class="glass-card rounded-2xl p-5">
+                            <h3 class="font-bold mb-2">😴 休息很重要</h3>
+                            <p class="text-sm text-gray-700">肌肉是在休息时生长的，不是训练时！保证每天7-8小时睡眠，训练日之间给肌肉48小时休息时间。</p>
+                        </div>
+                        <div class="glass-card rounded-2xl p-5">
+                            <h3 class="font-bold mb-2">🍽️ 饮食配合</h3>
+                            <p class="text-sm text-gray-700">想长肌肉要适当多吃蛋白质：每天1-2个鸡蛋、一杯牛奶/酸奶、肉类/鱼虾/豆腐。不用节食！正常吃饭，蛋白质足够就好。</p>
+                        </div>
+                        <div class="glass-card rounded-2xl p-5">
+                            <h3 class="font-bold mb-2">📸 记录变化</h3>
+                            <p class="text-sm text-gray-700">每2周穿同样的衣服在同样光线下拍一次对比照（正面、侧面）。体型变化比体重数字重要得多，不要天天称重。</p>
+                        </div>
+                        <div class="glass-card rounded-2xl p-5">
+                            <h3 class="font-bold mb-2">⏰ 坚持是关键</h3>
+                            <p class="text-sm text-gray-700">前4周可能看不到明显外观变化，但你的神经和肌肉在学习动作模式！一般8-12周会看到明显效果，不要轻易放弃。</p>
+                        </div>
+                        <div class="glass-card rounded-2xl p-5">
+                            <h3 class="font-bold mb-2">❌ 不要怕"变壮"</h3>
+                            <p class="text-sm text-gray-700">女生没有男生的激素水平，力量训练只会让你<strong>紧致有线条</strong>——肩膀变宽显腰细、手臂变紧、穿衣服更好看！</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-5 glass-dark rounded-2xl text-center">
+                        <p class="text-white text-lg font-semibold">
+                            💪 记住：动作做对比做重更重要！开始行动吧，你可以的！
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="py-8 text-center">
+            <p class="text-white/70 text-sm">
+                开始你的训练之旅 · 坚持就是胜利 ✨
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        function switchPhase(phaseNum) {
+            document.querySelectorAll('.phase-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.phase-tab').forEach(el => {
+                el.classList.remove('active');
+                el.classList.add('text-white/70');
+            });
+            
+            document.getElementById('phase' + phaseNum).classList.remove('hidden');
+            const activeTab = document.getElementById('phase' + phaseNum + '-tab');
+            activeTab.classList.add('active');
+            activeTab.classList.remove('text-white/70');
+            activeTab.classList.add('text-white');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

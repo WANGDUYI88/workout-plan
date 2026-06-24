@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>器材选购指南 | 居家肩臂训练</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans SC', 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 30%, #0d9488 70%, #0891b2 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 15% 20%, rgba(45, 212, 191, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 85% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+        
+        .content-wrapper { position: relative; z-index: 1; }
+        
+        .tag {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .spec-card {
+            border-left: 4px solid #14b8a6;
+            background: #f0fdfa;
+        }
+        
+        .buy-tip {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .link-card {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+        
+        .link-card:hover {
+            background: #e0f2fe;
+            border-color: #38bdf8;
+        }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: rgba(20, 184, 166, 0.6); border-radius: 10px; }
+    </style>
+</head>
+<body class="text-gray-800">
+    <div class="content-wrapper">
+        <!-- Header -->
+        <header class="pt-10 pb-6 px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-4">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm transition-colors">
+                        <span>←</span> 返回训练计划
+                    </a>
+                </div>
+                <div class="w-16 h-16 rounded-2xl glass flex items-center justify-center text-3xl mx-auto mb-3">
+                    🛒
+                </div>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-2 drop-shadow-lg tracking-tight">
+                    器材选购指南
+                </h1>
+                <p class="text-lg text-white/80">
+                    不需要买贵的，选对就行，总价控制在150元以内足够用
+                </p>
+            </div>
+        </header>
+
+        <main class="max-w-4xl mx-auto px-4 pb-20">
+            <!-- 弹力带 -->
+            <section class="mb-8">
+                <div class="glass-card rounded-3xl p-6 md:p-8">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center text-3xl shadow-lg">
+                            🎗️
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold">弹力带（阻力带）</h2>
+                            <p class="text-gray-500 text-sm">预算：20-40元</p>
+                        </div>
+                    </div>
+                    
+                    <div class="spec-card rounded-xl p-5 mb-5">
+                        <p class="font-bold text-teal-900 mb-3 text-lg">✅ 选购要点</p>
+                        <div class="grid md:grid-cols-2 gap-3 text-sm text-gray-700">
+                            <div class="bg-white/60 rounded-lg p-3">
+                                <span class="font-semibold text-teal-800">类型：</span>买「带把手的管式弹力带」，不是环形迷你带，也不是薄的瑜伽拉伸带
+                            </div>
+                            <div class="bg-white/60 rounded-lg p-3">
+                                <span class="font-semibold text-teal-800">数量：</span>买3根不同阻力的套装（轻/中/重）
+                            </div>
+                            <div class="bg-white/60 rounded-lg p-3">
+                                <span class="font-semibold text-teal-800">阻力：</span>轻15-20磅、中25-30磅、重35-40磅（从轻开始）
+                            </div>
+                            <div class="bg-white/60 rounded-lg p-3">
+                                <span class="font-semibold text-teal-800">配件：</span>最好带「门锚」，可以固定在门上做面拉
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="buy-tip rounded-xl p-4 mb-6">
+                        <p class="font-semibold text-amber-900 mb-1">💡 选购小贴士</p>
+                        <p class="text-sm text-amber-800">不要买太便宜的（容易断），也不要买颜色花哨但没标磅数的。迪卡侬的阻力带性价比很高，可以直接去店里试手感。初期15-20磅做侧平举和面拉刚好。</p>
+                    </div>
+                    
+                    <h3 class="font-bold text-gray-800 mb-3">🔗 推荐购买链接</h3>
+                    <div class="space-y-3">
+                        <a href="https://search.jd.com/Search?keyword=%E5%BC%B9%E5%8A%9B%E5%B8%A6+%E6%8A%8A%E6%89%8B+%E7%AE%A1%E5%BC%8F+%E9%98%BB%E5%8A%9B%E5%B8%A6+%E5%A5%97%E8%A3%85+%E9%97%A8%E9%94%9A&enc=utf-8" target="_blank" class="link-card rounded-xl p-4 flex items-center gap-3 block">
+                            <div class="w-10 h-10 rounded-lg bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">JD</div>
+                            <div>
+                                <p class="font-semibold text-gray-800">京东搜索：弹力带+把手+管式+套装+门锚</p>
+                                <p class="text-sm text-gray-500">按销量排序，选评价2000+的</p>
+                            </div>
+                            <span class="ml-auto text-gray-400">→</span>
+                        </a>
+                        <a href="https://search.jd.com/Search?keyword=Keep+%E6%8B%89%E5%8A%9B%E7%BB%B3+%E5%BC%B9%E5%8A%9B%E5%B8%A6+%E6%8A%8A%E6%89%8B+%E9%97%A8%E6%89%A3&enc=utf-8" target="_blank" class="link-card rounded-xl p-4 flex items-center gap-3 block">
+                            <div class="w-10 h-10 rounded-lg bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">JD</div>
+                            <div>
+                                <p class="font-semibold text-gray-800">京东搜索：Keep拉力绳+弹力带+把手+门扣</p>
+                                <p class="text-sm text-gray-500">Keep品牌，质量有保障</p>
+                            </div>
+                            <span class="ml-auto text-gray-400">→</span>
+                        </a>
+                        <a href="https://search.jd.com/Search?keyword=JOINFIT+%E5%BC%B9%E5%8A%9B%E5%B8%A6+%E6%8A%8A%E6%89%8B%E5%A5%97%E8%A3%85+%E5%81%A5%E8%BA%AB&enc=utf-8" target="_blank" class="link-card rounded-xl p-4 flex items-center gap-3 block">
+                            <div class="w-10 h-10 rounded-lg bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">JD</div>
+                            <div>
+                                <p class="font-semibold text-gray-800">京东搜索：JOINFIT弹力带+把手套装</p>
+                                <p class="text-sm text-gray-500">专业健身品牌，耐用性好</p>
+                            </div>
+                            <span class="ml-auto text-gray-400">→</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 哑铃 -->
+            <section class="mb-8">
+                <div class="glass-card rounded-3xl p-6 md:p-8">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-3xl shadow-lg">
+                            🏋️
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold">可调节哑铃</h2>
+                            <p class="text-gray-500 text-sm">预算：80-150元</p>
+                        </div>
+                    </div>
+                    
+                    <div class="spec-card rounded-xl p-5 mb-5">
+                        <p class="font-bold text-teal-900 mb-3 text-lg">✅ 选购要点</p>
+                        <div class="grid md:grid-cols-2 gap-3 text-sm text-gray-700">
+                            <div class="bg-white/60 rounded-lg p-3">
+                                <span class="font-semibold text-teal-800">类型：</span>可调节重量的包胶哑铃，不要买电镀的（太响、伤地板）
+                            </div>
+                            <div class="bg-white/60 rounded-lg p-3">
+                                <span class="font-semibold text-teal-800">重量：</span>单只可调节至1kg-5kg足够（进阶最多到8kg）
+                            </div>
+                            <div class="bg-white/60 rounded-lg p-3">
+                                <span class="font-semibold text-teal-800">材质：</span>包胶外层，握把防滑，不要买纯铁的
+                            </div>
+                            <div class="bg-white/60 rounded-lg p-3">
+                                <span class="font-semibold text-teal-800">替代：</span>暂时不想买可用矿泉水瓶（500ml≈0.5kg，2L≈2kg）
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="buy-tip rounded-xl p-4 mb-6">
+                        <p class="font-semibold text-amber-900 mb-1">💡 重量选择参考</p>
+                        <p class="text-sm text-amber-800">侧平举用1-2kg，肩推/弯举用2-3kg，划船用3-4kg。不要一开始就买重的，能标准做完12次、最后两次感觉吃力就是合适的重量。</p>
+                    </div>
+                    
+                    <h3 class="font-bold text-gray-800 mb-3">🔗 推荐购买链接</h3>
+                    <div class="space-y-3">
+                        <a href="https://search.jd.com/Search?keyword=%E5%8C%85%E8%83%B6%E5%93%91%E9%93%83+%E5%8F%AF%E8%B0%83%E8%8A%82+%E5%A5%B3%E5%A3%AB%E5%AE%B6%E7%94%A8+5kg&enc=utf-8" target="_blank" class="link-card rounded-xl p-4 flex items-center gap-3 block">
+                            <div class="w-10 h-10 rounded-lg bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">JD</div>
+                            <div>
+                                <p class="font-semibold text-gray-800">京东搜索：包胶哑铃+可调节+女士家用+5kg</p>
+                                <p class="text-sm text-gray-500">综合搜索结果，按销量和评价筛选</p>
+                            </div>
+                            <span class="ml-auto text-gray-400">→</span>
+                        </a>
+                        <a href="https://search.jd.com/Search?keyword=%E5%8D%8E%E4%BA%9A+%E5%93%91%E9%93%83+%E5%8C%85%E8%83%B6+%E5%8F%AF%E8%B0%83%E8%8A%82+10%E5%85%AC%E6%96%A4&enc=utf-8" target="_blank" class="link-card rounded-xl p-4 flex items-center gap-3 block">
+                            <div class="w-10 h-10 rounded-lg bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">JD</div>
+                            <div>
+                                <p class="font-semibold text-gray-800">京东搜索：华亚哑铃+包胶+可调节+10公斤</p>
+                                <p class="text-sm text-gray-500">华亚是老品牌，性价比高</p>
+                            </div>
+                            <span class="ml-auto text-gray-400">→</span>
+                        </a>
+                        <a href="https://search.jd.com/Search?keyword=%E7%B4%A2%E7%BB%B4%E6%96%AF+%E5%93%91%E9%93%83+%E5%A5%B3%E5%A3%AB+%E5%AE%B6%E7%94%A8+%E5%8F%AF%E8%B0%83%E8%8A%82&enc=utf-8" target="_blank" class="link-card rounded-xl p-4 flex items-center gap-3 block">
+                            <div class="w-10 h-10 rounded-lg bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">JD</div>
+                            <div>
+                                <p class="font-semibold text-gray-800">京东搜索：索维斯哑铃+女士+家用+可调节</p>
+                                <p class="text-sm text-gray-500">专为女生设计的小重量哑铃</p>
+                            </div>
+                            <span class="ml-auto text-gray-400">→</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 瑜伽垫 -->
+            <section class="mb-8">
+                <div class="glass-card rounded-3xl p-6 md:p-8">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-3xl shadow-lg">
+                            🧘
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold">瑜伽垫</h2>
+                            <p class="text-gray-500 text-sm">预算：30-60元</p>
+                        </div>
+                    </div>
+                    
+                    <div class="spec-card rounded-xl p-5 mb-5">
+                        <p class="font-bold text-teal-900 mb-3 text-lg">✅ 选购要点</p>
+                        <div class="grid md:grid-cols-2 gap-3 text-sm text-gray-700">
+                            <div class="bg-white/60 rounded-lg p-3">
+                                <span class="font-semibold text-teal-800">厚度：</span>8-10mm（太薄硌膝盖，太厚不稳容易崴脚）
+                            </div>
+                            <div class="bg-white/60 rounded-lg p-3">
+                                <span class="font-semibold text-teal-800">材质：</span>TPE材质（环保无味，防滑好），不要买PVC的味道大
+                            </div>
+                            <div class="bg-white/60 rounded-lg p-3">
+                                <span class="font-semibold text-teal-800">尺寸：</span>宽度至少68cm，长度183cm以上
+                            </div>
+                            <div class="bg-white/60 rounded-lg p-3">
+                                <span class="font-semibold text-teal-800">防滑：</span>双面防滑纹理，出汗不滑
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="font-bold text-gray-800 mb-3">🔗 推荐购买链接</h3>
+                    <div class="space-y-3">
+                        <a href="https://search.jd.com/Search?keyword=yottoy+%E7%91%9C%E4%BC%BD%E5%9E%AB+TPE+%E9%98%B2%E6%BB%91+%E5%8A%A0%E5%8E%9A+185&enc=utf-8" target="_blank" class="link-card rounded-xl p-4 flex items-center gap-3 block">
+                            <div class="w-10 h-10 rounded-lg bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">JD</div>
+                            <div>
+                                <p class="font-semibold text-gray-800">京东搜索：yottoy瑜伽垫+TPE+防滑+加厚</p>
+                                <p class="text-sm text-gray-500">yottoy是瑜伽垫口碑品牌，TPE材质好</p>
+                            </div>
+                            <span class="ml-auto text-gray-400">→</span>
+                        </a>
+                        <a href="https://search.jd.com/Search?keyword=%E4%BA%AC%E9%80%A0%E4%BA%AC%E9%80%A0+TPE+%E7%91%9C%E4%BC%BD%E5%9E%AB+%E5%8A%A0%E5%8E%9A+8mm&enc=utf-8" target="_blank" class="link-card rounded-xl p-4 flex items-center gap-3 block">
+                            <div class="w-10 h-10 rounded-lg bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">JD</div>
+                            <div>
+                                <p class="font-semibold text-gray-800">京东搜索：京东京造+TPE+瑜伽垫+加厚+8mm</p>
+                                <p class="text-sm text-gray-500">京东自有品牌，性价比极高</p>
+                            </div>
+                            <span class="ml-auto text-gray-400">→</span>
+                        </a>
+                        <a href="https://search.jd.com/Search?keyword=%E5%AE%89%E8%B8%8F+%E7%91%9C%E4%BC%BD%E5%9E%AB+TPE+%E9%98%B2%E6%BB%91+%E5%8A%A0%E5%8E%9A&enc=utf-8" target="_blank" class="link-card rounded-xl p-4 flex items-center gap-3 block">
+                            <div class="w-10 h-10 rounded-lg bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">JD</div>
+                            <div>
+                                <p class="font-semibold text-gray-800">京东搜索：安踏+瑜伽垫+TPE+防滑+加厚</p>
+                                <p class="text-sm text-gray-500">运动品牌出品，耐用性好</p>
+                            </div>
+                            <span class="ml-auto text-gray-400">→</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 选购提醒 -->
+            <section class="mb-8">
+                <div class="glass rounded-3xl p-6 md:p-8">
+                    <h2 class="text-xl font-bold mb-4 flex items-center gap-3 text-white">
+                        <span class="text-2xl">⚠️</span>
+                        选购避坑提醒
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="glass-card rounded-2xl p-5">
+                            <h3 class="font-bold text-red-700 mb-2">❌ 不要买</h3>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li>• 没标磅数的弹力带（阻力未知，没法选）</li>
+                                <li>• 太便宜的弹力带（容易断，弹到身上很疼）</li>
+                                <li>• PVC材质瑜伽垫（味道大，不环保）</li>
+                                <li>• 电镀哑铃（响声大，伤地板）</li>
+                                <li>• 固定重量哑铃（不能调节，进阶浪费）</li>
+                            </ul>
+                        </div>
+                        <div class="glass-card rounded-2xl p-5">
+                            <h3 class="font-bold text-emerald-700 mb-2">✅ 选购技巧</h3>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li>• 按销量排序，选评价2000+的</li>
+                                <li>• 优先京东自营或品牌旗舰店</li>
+                                <li>• 看差评：有没有"容易断""味道大""掉色"</li>
+                                <li>• 迪卡侬线下店可以试手感再决定</li>
+                                <li>• 不急用可以等618/双11打折买</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 极简方案 -->
+            <section>
+                <div class="glass rounded-3xl p-6 md:p-8 text-center">
+                    <p class="text-white/90 text-lg mb-4">
+                        💡 预算为0？可以先从自重训练开始！
+                    </p>
+                    <p class="text-white/70 text-sm mb-6">
+                        墙壁俯卧撑、椅子臂屈伸、矿泉水瓶替代哑铃，练一个月确定能坚持再买器材也不迟
+                    </p>
+                    <a href="index.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all">
+                        <span>💪</span> 返回训练计划
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="py-8 text-center">
+            <p class="text-white/60 text-sm">
+                选对器材，训练效果翻倍 ✨
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
