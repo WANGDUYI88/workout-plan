@@ -2,7 +2,7 @@
 
 The main workout page now uses these animated WebP files. Original JPG files are kept in place and were not deleted.
 
-Character style: full enclosed Siamese cat mascot head with no visible human face, white short-sleeve T-shirt, black athletic shorts, and white sneakers.
+Character style: full enclosed Siamese cat mascot head with no visible human face, normal human arms/hands/legs, white short-sleeve T-shirt, black athletic shorts, and white sneakers. No tails, paws, claws, fur body, or black animal feet.
 
 01. `01-warmup-arm-circles.webp` - 手臂大绕环
 02. `02-warmup-band-pull-apart.webp` - 弹力带肩后激活
@@ -19,5 +19,12 @@ Character style: full enclosed Siamese cat mascot head with no visible human fac
 13. `13-stretch-cross-shoulder.webp` - 交叉肩部拉伸
 14. `14-stretch-triceps.webp` - 过头三头肌拉伸
 15. `15-stretch-side-bend.webp` - 坐姿侧弯放松
+16. `16-seated-band-row.webp` - 弹力带坐姿划船
+17. `17-sit-to-stand-squat.webp` - 坐站 / 徒手深蹲
+18. `18-glute-bridge.webp` - 臀桥
+19. `19-dead-bug.webp` - 死虫
+20. `20-forearm-plank.webp` - 平板支撑
+21. `21-band-triceps-pushdown.webp` - 弹力带三头下压
+22. `22-close-grip-wall-pushup.webp` - 窄距墙壁俯卧撑
 
 Format: animated WebP, 720 x 960. Each frame uses a contained full-body stage to avoid cropping in the page layout.
