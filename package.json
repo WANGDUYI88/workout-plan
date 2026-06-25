@@ -2,10 +2,8 @@
   "name": "workout-plan",
   "version": "1.0.0",
   "description": "Home Shoulder & Arm Training Plan",
+  "private": true,
   "scripts": {
-    "start": "npx serve ."
-  },
-  "dependencies": {
-    "http-proxy": "^1.18.1"
+    "start": "npx --yes serve ."
   }
 }

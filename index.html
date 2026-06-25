@@ -3,196 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="零基础居家肩臂训练计划，包含热身、三阶段训练、拉伸和器材准备建议。">
     <title>居家肩臂训练计划 | 零基础入门</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans SC', 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 30%, #0d9488 70%, #0891b2 100%);
-            background-attachment: fixed;
-            min-height: 100vh;
-        }
-        
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(ellipse at 15% 20%, rgba(45, 212, 191, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 85% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(20, 184, 166, 0.1) 0%, transparent 60%);
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .glass {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            box-shadow: 
-                0 8px 32px rgba(0, 0, 0, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.15);
-        }
-        
-        .glass-card {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 
-                0 8px 32px rgba(0, 0, 0, 0.15),
-                inset 0 1px 0 rgba(255, 255, 255, 0.8);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .glass-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 
-                0 16px 48px rgba(0, 0, 0, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.9);
-        }
-        
-        .glass-dark {
-            background: rgba(0, 0, 0, 0.25);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .phase-tab {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .phase-tab.active {
-            background: linear-gradient(135deg, #14b8a6, #0d9488);
-            box-shadow: 0 4px 20px rgba(20, 184, 166, 0.4);
-            color: white;
-        }
-        
-        .exercise-img-container {
-            background: #f8fafc;
-            border-radius: 16px;
-            overflow: hidden;
-        }
-        
-        .exercise-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .start-end-label {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: rgba(15, 23, 42, 0.8);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-        
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
-            opacity: 0;
-        }
-        
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-        
-        .tag {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .progress-bar {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 100px;
-            overflow: hidden;
-        }
-        
-        .progress-fill {
-            background: linear-gradient(90deg, #14b8a6, #06b6d4, #3b82f6);
-            border-radius: 100px;
-            height: 100%;
-            transition: width 1s ease-out;
-        }
-        
-        .muscle-tag {
-            font-size: 11px;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-weight: 600;
-        }
-        
-        .muscle-shoulder { background: linear-gradient(135deg, #fef3c7, #fde68a); color: #92400e; }
-        .muscle-back { background: linear-gradient(135deg, #d1fae5, #a7f3d0); color: #065f46; }
-        .muscle-chest { background: linear-gradient(135deg, #fee2e2, #fecaca); color: #991b1b; }
-        .muscle-arm { background: linear-gradient(135deg, #dbeafe, #bfdbfe); color: #1e40af; }
-        .muscle-posture { background: linear-gradient(135deg, #e0e7ff, #c7d2fe); color: #3730a3; }
-        .muscle-core { background: linear-gradient(135deg, #f3e8ff, #e9d5ff); color: #6b21a8; }
-        
-        .spec-card {
-            border-left: 4px solid #14b8a6;
-            background: #f0fdfa;
-        }
-        
-        .buy-tip {
-            background: linear-gradient(135deg, #fffbeb, #fef3c7);
-            border-left: 4px solid #f59e0b;
-        }
-        
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); border-radius: 10px; }
-        ::-webkit-scrollbar-thumb { background: rgba(20, 184, 166, 0.6); border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgba(20, 184, 166, 0.8); }
-        
-        .content-wrapper { position: relative; z-index: 1; }
-        
-        .section-title {
-            color: white;
-            font-weight: 700;
-        }
-        
-        .step-num {
-            width: 24px;
-            height: 24px;
-            background: linear-gradient(135deg, #14b8a6, #0d9488);
-            color: white;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: 700;
-            flex-shrink: 0;
-            margin-right: 10px;
-        }
-        
-        .accent-teal { color: #14b8a6; }
-        .accent-blue { color: #3b82f6; }
-        .accent-orange { color: #f97316; }
-    </style>
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body class="text-gray-800">
     <div class="content-wrapper">
@@ -251,7 +68,7 @@
                         </div>
                         <div class="grid md:grid-cols-2 gap-4 mb-5">
                             <div class="exercise-img-container relative aspect-[4/3]">
-                                <img src="assets/warmup-arm-circles.jpg" alt="手臂大绕环">
+                                <img src="assets/motion/01-warmup-arm-circles.webp" alt="手臂大绕环" width="720" height="540" loading="lazy" decoding="async">
                             </div>
                             <div class="bg-gray-50 rounded-2xl p-5">
                                 <p class="font-bold mb-3 text-gray-800">📝 动作步骤：</p>
@@ -294,7 +111,7 @@
                         </div>
                         <div class="grid md:grid-cols-2 gap-4 mb-5">
                             <div class="exercise-img-container relative aspect-[4/3]">
-                                <img src="assets/warmup-band-pull-apart.jpg" alt="弹力带肩后激活">
+                                <img src="assets/motion/02-warmup-band-pull-apart.webp" alt="弹力带肩后激活" width="720" height="540" loading="lazy" decoding="async">
                             </div>
                             <div class="bg-gray-50 rounded-2xl p-5">
                                 <p class="font-bold mb-3 text-gray-800">📝 动作步骤：</p>
@@ -340,7 +157,7 @@
                         </div>
                         <div class="grid md:grid-cols-2 gap-4 mb-5">
                             <div class="exercise-img-container relative aspect-[4/3]">
-                                <img src="assets/warmup-shoulder-dislocates.jpg" alt="毛巾肩部环绕">
+                                <img src="assets/motion/03-warmup-shoulder-dislocates.webp" alt="毛巾肩部环绕" width="720" height="540" loading="lazy" decoding="async">
                             </div>
                             <div class="bg-gray-50 rounded-2xl p-5">
                                 <p class="font-bold mb-3 text-gray-800">📝 动作步骤：</p>
@@ -384,20 +201,20 @@
                         三阶段渐进计划
                     </h2>
                     
-                    <div class="flex gap-2 mb-6 p-1 glass-dark rounded-2xl">
-                        <button onclick="switchPhase(1)" id="phase1-tab" class="phase-tab active flex-1 py-3 px-4 rounded-xl font-semibold text-center">
+                    <div class="flex gap-2 mb-6 p-1 glass-dark rounded-2xl" role="tablist" aria-label="训练阶段">
+                        <button type="button" data-phase="1" id="phase1-tab" role="tab" aria-selected="true" aria-controls="phase1" class="phase-tab active flex-1 py-3 px-4 rounded-xl font-semibold text-center">
                             🌱 适应期<br><span class="text-xs font-normal opacity-90">第1-4周</span>
                         </button>
-                        <button onclick="switchPhase(2)" id="phase2-tab" class="phase-tab flex-1 py-3 px-4 rounded-xl font-semibold text-white/70 text-center">
+                        <button type="button" data-phase="2" id="phase2-tab" role="tab" aria-selected="false" aria-controls="phase2" class="phase-tab flex-1 py-3 px-4 rounded-xl font-semibold text-white/70 text-center">
                             🌿 进阶期<br><span class="text-xs font-normal opacity-90">第5-8周</span>
                         </button>
-                        <button onclick="switchPhase(3)" id="phase3-tab" class="phase-tab flex-1 py-3 px-4 rounded-xl font-semibold text-white/70 text-center">
+                        <button type="button" data-phase="3" id="phase3-tab" role="tab" aria-selected="false" aria-controls="phase3" class="phase-tab flex-1 py-3 px-4 rounded-xl font-semibold text-white/70 text-center">
                             🌳 巩固期<br><span class="text-xs font-normal opacity-90">第9周+</span>
                         </button>
                     </div>
 
                     <!-- ========== PHASE 1 ========== -->
-                    <div id="phase1" class="phase-content">
+                    <div id="phase1" class="phase-content" role="tabpanel" aria-labelledby="phase1-tab">
                         <div class="mb-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="font-semibold text-white">目标：建立正确动作模式，唤醒肌肉，改善体态</span>
@@ -420,7 +237,7 @@
                             <div class="grid md:grid-cols-1 gap-4 mb-5">
                                 <div class="exercise-img-container relative aspect-[4/3] max-w-lg mx-auto">
                                     <span class="start-end-label">标准姿势</span>
-                                    <img src="assets/wall-pushup-start.jpg" alt="墙壁俯卧撑">
+                                    <img src="assets/motion/04-wall-pushup-standard.webp" alt="墙壁俯卧撑标准姿势" width="720" height="540" loading="lazy" decoding="async">
                                 </div>
                             </div>
                             
@@ -475,14 +292,10 @@
                                 <span class="muscle-tag muscle-shoulder">肩中束（宽肩关键！）</span>
                             </div>
                             
-                            <div class="grid md:grid-cols-2 gap-4 mb-5">
-                                <div class="exercise-img-container relative aspect-[4/3]">
-                                    <span class="start-end-label">起始位置</span>
-                                    <img src="assets/lateral-raise-start.jpg" alt="弹力带侧平举起始">
-                                </div>
-                                <div class="exercise-img-container relative aspect-[4/3]">
-                                    <span class="start-end-label">抬起位置</span>
-                                    <img src="assets/lateral-raise-end.jpg" alt="弹力带侧平举结束">
+                            <div class="grid md:grid-cols-1 gap-4 mb-5">
+                                <div class="exercise-img-container relative aspect-[4/3] max-w-lg mx-auto">
+                                    <span class="start-end-label">动作演示</span>
+                                    <img src="assets/motion/05-lateral-raise.webp" alt="弹力带侧平举动作演示" width="720" height="540" loading="lazy" decoding="async">
                                 </div>
                             </div>
                             
@@ -543,14 +356,10 @@
                                 <span class="muscle-tag muscle-posture">改善圆肩神器！</span>
                             </div>
                             
-                            <div class="grid md:grid-cols-2 gap-4 mb-5">
-                                <div class="exercise-img-container relative aspect-[4/3]">
-                                    <span class="start-end-label">起始位置</span>
-                                    <img src="assets/face-pull-start.jpg" alt="弹力带面拉起始">
-                                </div>
-                                <div class="exercise-img-container relative aspect-[4/3]">
-                                    <span class="start-end-label">拉到位置</span>
-                                    <img src="assets/face-pull-end.jpg" alt="弹力带面拉结束">
+                            <div class="grid md:grid-cols-1 gap-4 mb-5">
+                                <div class="exercise-img-container relative aspect-[4/3] max-w-lg mx-auto">
+                                    <span class="start-end-label">动作演示</span>
+                                    <img src="assets/motion/06-face-pull.webp" alt="弹力带面拉动作演示" width="720" height="540" loading="lazy" decoding="async">
                                 </div>
                             </div>
                             
@@ -613,14 +422,10 @@
                                 <span class="muscle-tag muscle-arm">手臂后侧（告别拜拜肉）</span>
                             </div>
                             
-                            <div class="grid md:grid-cols-2 gap-4 mb-5">
-                                <div class="exercise-img-container relative aspect-[4/3]">
-                                    <span class="start-end-label">起始位置</span>
-                                    <img src="assets/tricep-dip-start.jpg" alt="椅子臂屈伸起始">
-                                </div>
-                                <div class="exercise-img-container relative aspect-[4/3]">
-                                    <span class="start-end-label">下降位置</span>
-                                    <img src="assets/tricep-dip-end.jpg" alt="椅子臂屈伸结束">
+                            <div class="grid md:grid-cols-1 gap-4 mb-5">
+                                <div class="exercise-img-container relative aspect-[4/3] max-w-lg mx-auto">
+                                    <span class="start-end-label">动作演示</span>
+                                    <img src="assets/motion/07-tricep-dip.webp" alt="椅子臂屈伸动作演示" width="720" height="540" loading="lazy" decoding="async">
                                 </div>
                             </div>
                             
@@ -678,7 +483,7 @@
                     </div>
 
                     <!-- ========== PHASE 2 ========== -->
-                    <div id="phase2" class="phase-content hidden">
+                    <div id="phase2" class="phase-content hidden" role="tabpanel" aria-labelledby="phase2-tab" hidden>
                         <div class="mb-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="font-semibold text-white">目标：增加训练负荷，强化肩臂线条，进一步改善体态</span>
@@ -703,7 +508,7 @@
                             </div>
                             
                             <div class="exercise-img-container relative aspect-[4/3] mb-5">
-                                <img src="assets/kneeling-pushup.jpg" alt="跪姿俯卧撑">
+                                <img src="assets/motion/08-kneeling-pushup.webp" alt="跪姿俯卧撑" width="720" height="540" loading="lazy" decoding="async">
                             </div>
                             
                             <div class="bg-gray-50 rounded-2xl p-5 mb-4">
@@ -751,7 +556,7 @@
                             </div>
                             
                             <div class="exercise-img-container relative aspect-[4/3] mb-5">
-                                <img src="assets/shoulder-press.jpg" alt="哑铃坐姿肩推">
+                                <img src="assets/motion/09-shoulder-press.webp" alt="哑铃坐姿肩推" width="720" height="540" loading="lazy" decoding="async">
                             </div>
                             
                             <div class="bg-gray-50 rounded-2xl p-5 mb-4">
@@ -805,7 +610,7 @@
                             </div>
                             
                             <div class="exercise-img-container relative aspect-[4/3] mb-5">
-                                <img src="assets/bent-row.jpg" alt="单臂哑铃划船">
+                                <img src="assets/motion/10-bent-row.webp" alt="单臂哑铃划船" width="720" height="540" loading="lazy" decoding="async">
                             </div>
                             
                             <div class="bg-gray-50 rounded-2xl p-5 mb-4">
@@ -858,7 +663,7 @@
                             </div>
                             
                             <div class="exercise-img-container relative aspect-[4/3] mb-5">
-                                <img src="assets/bicep-curl.jpg" alt="哑铃弯举">
+                                <img src="assets/motion/11-bicep-curl.webp" alt="哑铃弯举" width="720" height="540" loading="lazy" decoding="async">
                             </div>
                             
                             <div class="bg-gray-50 rounded-2xl p-5 mb-4">
@@ -901,7 +706,7 @@
                     </div>
 
                     <!-- ========== PHASE 3 ========== -->
-                    <div id="phase3" class="phase-content hidden">
+                    <div id="phase3" class="phase-content hidden" role="tabpanel" aria-labelledby="phase3-tab" hidden>
                         <div class="mb-6">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="font-semibold text-white">目标：雕刻线条，增加训练容量，养成长期运动习惯</span>
@@ -1126,7 +931,7 @@
                         </div>
                         <div class="grid md:grid-cols-2 gap-4 mb-5">
                             <div class="exercise-img-container relative aspect-[4/3]">
-                                <img src="assets/stretch-doorway-chest.jpg" alt="门框胸肌拉伸">
+                                <img src="assets/motion/12-stretch-doorway-chest.webp" alt="门框胸肌拉伸" width="720" height="540" loading="lazy" decoding="async">
                             </div>
                             <div class="bg-gray-50 rounded-2xl p-5">
                                 <p class="font-bold mb-3 text-gray-800">📝 动作步骤：</p>
@@ -1173,7 +978,7 @@
                         </div>
                         <div class="grid md:grid-cols-2 gap-4 mb-5">
                             <div class="exercise-img-container relative aspect-[4/3]">
-                                <img src="assets/stretch-cross-shoulder.jpg" alt="交叉肩部拉伸">
+                                <img src="assets/motion/13-stretch-cross-shoulder.webp" alt="交叉肩部拉伸" width="720" height="540" loading="lazy" decoding="async">
                             </div>
                             <div class="bg-gray-50 rounded-2xl p-5">
                                 <p class="font-bold mb-3 text-gray-800">📝 动作步骤：</p>
@@ -1219,7 +1024,7 @@
                         </div>
                         <div class="grid md:grid-cols-2 gap-4 mb-5">
                             <div class="exercise-img-container relative aspect-[4/3]">
-                                <img src="assets/stretch-triceps.jpg" alt="过头三头肌拉伸">
+                                <img src="assets/motion/14-stretch-triceps.webp" alt="过头三头肌拉伸" width="720" height="540" loading="lazy" decoding="async">
                             </div>
                             <div class="bg-gray-50 rounded-2xl p-5">
                                 <p class="font-bold mb-3 text-gray-800">📝 动作步骤：</p>
@@ -1266,7 +1071,7 @@
                         </div>
                         <div class="grid md:grid-cols-2 gap-4 mb-5">
                             <div class="exercise-img-container relative aspect-[4/3]">
-                                <img src="assets/stretch-side-bend.jpg" alt="坐姿侧弯放松">
+                                <img src="assets/motion/15-stretch-side-bend.webp" alt="坐姿侧弯放松" width="720" height="540" loading="lazy" decoding="async">
                             </div>
                             <div class="bg-gray-50 rounded-2xl p-5">
                                 <p class="font-bold mb-3 text-gray-800">📝 动作步骤：</p>
@@ -1496,36 +1301,6 @@
             </p>
         </footer>
     </div>
-
-    <script>
-        function switchPhase(phaseNum) {
-            document.querySelectorAll('.phase-content').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('.phase-tab').forEach(el => {
-                el.classList.remove('active');
-                el.classList.add('text-white/70');
-            });
-            
-            document.getElementById('phase' + phaseNum).classList.remove('hidden');
-            const activeTab = document.getElementById('phase' + phaseNum + '-tab');
-            activeTab.classList.add('active');
-            activeTab.classList.remove('text-white/70');
-            activeTab.classList.add('text-white');
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
-                    }
-                });
-            });
-            
-            document.querySelectorAll('.fade-in').forEach(el => {
-                el.style.animationPlayState = 'paused';
-                observer.observe(el);
-            });
-        });
-    </script>
+    <script src="assets/app.js" defer></script>
 </body>
 </html>
