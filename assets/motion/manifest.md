@@ -20,4 +20,4 @@ Character style: full enclosed Siamese cat mascot head with no visible human fac
 14. `14-stretch-triceps.webp` - 过头三头肌拉伸
 15. `15-stretch-side-bend.webp` - 坐姿侧弯放松
 
-Format: animated WebP, 720 x 540.
+Format: animated WebP, 720 x 960. Each frame uses a contained full-body stage to avoid cropping in the page layout.
